@@ -1,0 +1,12 @@
+C:\GitProjects\GraphQLDGS\DomainModel\src\main\java\com\lbs\example\employeedirectory\domain\query\branchassign\BranchAssignQDto.java
+C:\GitProjects\GraphQLDGS\DomainModel\src\main\java\com\lbs\example\employeedirectory\domain\query\communication\CommunicationAssignQDto.java
+C:\GitProjects\GraphQLDGS\DomainModel\src\main\java\com\lbs\example\employeedirectory\domain\base\BaseDto.java
+C:\GitProjects\GraphQLDGS\DomainModel\src\main\java\com\lbs\example\employeedirectory\domain\command\branchassign\BranchAssignCDto.java
+C:\GitProjects\GraphQLDGS\DomainModel\src\main\java\com\lbs\example\employeedirectory\domain\command\communication\PhoneInfoCDto.java
+C:\GitProjects\GraphQLDGS\DomainModel\src\main\java\com\lbs\example\employeedirectory\domain\command\employee\EmployeeCDto.java
+C:\GitProjects\GraphQLDGS\DomainModel\src\main\java\com\lbs\example\employeedirectory\domain\command\codeassign\CodeAssignCDto.java
+C:\GitProjects\GraphQLDGS\DomainModel\src\main\java\com\lbs\example\employeedirectory\domain\query\codeassign\CodeAssignQDto.java
+C:\GitProjects\GraphQLDGS\DomainModel\src\main\java\com\lbs\example\employeedirectory\domain\query\communication\PhoneInfoQDto.java
+C:\GitProjects\GraphQLDGS\DomainModel\src\main\java\com\lbs\example\employeedirectory\domain\query\employee\EmployeeQDto.java
+C:\GitProjects\GraphQLDGS\DomainModel\src\main\java\com\lbs\example\employeedirectory\domain\query\salaryassign\SalaryAssignQDto.java
+C:\GitProjects\GraphQLDGS\DomainModel\src\main\java\com\lbs\example\employeedirectory\domain\command\communication\CommunicationAssignCDto.java

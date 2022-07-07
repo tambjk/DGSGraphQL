@@ -1,0 +1,3 @@
+com\lbs\example\employeedirectory\business\BusinessServiceConfiguration.class
+com\lbs\example\employeedirectory\business\query\EmployeeQueryService.class
+com\lbs\example\employeedirectory\business\EnableBusinessService.class

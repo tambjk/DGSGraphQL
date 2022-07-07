@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile default="true" name="Default" enabled="true" />
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="EntityModel" />
+        <module name="DaoService" />
+        <module name="CommandService" />
+        <module name="QueryService" />
+        <module name="DomainModel" />
+        <module name="BusinessService" />
+      </profile>
+    </annotationProcessing>
+  </component>
+  <component name="JavacSettings">
+    <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="BusinessService" options="-parameters" />
+      <module name="CommandService" options="-parameters" />
+      <module name="DaoService" options="-parameters" />
+      <module name="DomainModel" options="-parameters" />
+      <module name="EmployeeDirectoryPOC" options="-parameters" />
+      <module name="EntityModel" options="-parameters" />
+      <module name="QueryService" options="-parameters" />
+    </option>
+  </component>
+</project>

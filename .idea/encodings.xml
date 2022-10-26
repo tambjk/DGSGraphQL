@@ -8,5 +8,6 @@
     <file url="file://$PROJECT_DIR$/DomainModel/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/EntityModel/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/QueryService/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/QueryServiceSpring/src/main/java" charset="UTF-8" />
   </component>
 </project>

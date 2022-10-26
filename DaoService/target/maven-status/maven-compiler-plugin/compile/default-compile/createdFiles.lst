@@ -1,7 +1,0 @@
-com\lbs\example\employeedirectory\dao\repository\DaoServiceConfiguration.class
-com\lbs\example\employeedirectory\dao\repository\EnableDaoService.class
-com\lbs\example\employeedirectory\dao\repository\codeassign\CodeAssignRepository.class
-com\lbs\example\employeedirectory\dao\repository\salaryassign\SalaryAssignRepository.class
-com\lbs\example\employeedirectory\dao\repository\employee\EmployeeRepository.class
-com\lbs\example\employeedirectory\dao\repository\branchassign\BranchAssignRepository.class
-com\lbs\example\employeedirectory\dao\repository\communication\CommunicationRepository.class

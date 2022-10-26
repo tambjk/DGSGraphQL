@@ -21,6 +21,7 @@
         <project.version>1.0-SNAPSHOT</project.version>
         <spring-boot.version>2.3.0.RELEASE</spring-boot.version>
         <spring-cloud.version>Hoxton.RELEASE</spring-cloud.version>
+        <netflix.graphql.dgs.version>3.11.0</netflix.graphql.dgs.version>
     </properties>
 
     <modules>
@@ -30,6 +31,7 @@
         <module>CommandService</module>
         <module>QueryService</module>
         <module>BusinessService</module>
+        <module>QueryServiceSpring</module>
     </modules>
 
     <dependencyManagement>

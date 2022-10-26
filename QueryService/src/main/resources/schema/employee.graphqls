@@ -1,7 +1,9 @@
 type Query {
     employees: [Employee]
 }
+
 scalar Date
+scalar Object
 
 type Employee {
     id: String!
@@ -10,6 +12,12 @@ type Employee {
     birthDate: Date
     identityCode: String
     branchAssigns: [BranchAssign]
+    customFields: [CustomField]
+}
+
+type CustomField {
+    name: String
+    value: Object
 }
 
 type BranchAssign {

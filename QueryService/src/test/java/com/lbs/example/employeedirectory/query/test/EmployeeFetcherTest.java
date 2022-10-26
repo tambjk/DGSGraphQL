@@ -1,11 +1,14 @@
 package com.lbs.example.employeedirectory.query.test;
 
 import com.lbs.example.employeedirectory.dao.repository.employee.EmployeeRepository;
+import com.lbs.example.employeedirectory.domain.query.employee.EmployeeQDto;
+import com.lbs.example.employeedirectory.entity.employee.CustomField;
 import com.lbs.example.employeedirectory.entity.employee.Employee;
 import com.lbs.example.employeedirectory.query.config.QueryServiceApplicationConfiguration;
 import com.lbs.example.employeedirectory.query.datafetcher.EmployeeDataFetcher;
 import com.netflix.graphql.dgs.DgsQueryExecutor;
 import com.netflix.graphql.dgs.autoconfig.DgsAutoConfiguration;
+import graphql.ExecutionResult;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -18,7 +21,8 @@ import org.springframework.test.context.junit4.SpringRunner;
 
 import java.time.LocalDate;
 import java.util.Arrays;
-import java.util.List;
+import java.util.HashMap;
+import java.util.Map;
 
 /**
  * Created by Erman.Kaygusuzer on 24/06/2022
@@ -36,19 +40,26 @@ public class EmployeeFetcherTest {
 
 	@Before
 	public void mocking() {
+		Map<String, CustomField> customField1 = new HashMap<>();
+		customField1.put("country", new CustomField("countryParam", "TR"));
 		Employee emp1 = Employee.builder()
 				.id("emp1")
 				.name("Erman")
 				.surname("Kaygusuzer")
 				.identityCode("1")
 				.birthDate(LocalDate.now())
+				.customFields(customField1)
 				.build();
+
+		Map<String, CustomField> customField2 = new HashMap<>();
+		customField2.put("country", new CustomField("countryParam", "TR"));
 		Employee emp2 = Employee.builder()
 				.id("emp2")
 				.name("Arya")
 				.surname("Kaygusuzer")
 				.identityCode("2")
 				.birthDate(LocalDate.now())
+				.customFields(customField2)
 				.build();
 
 		Mockito.when(employeeRepository.findAll()).thenReturn(Arrays.asList(emp1, emp2));
@@ -56,12 +67,21 @@ public class EmployeeFetcherTest {
 
 	@Test
 	public void employees() {
-		List<String> employees = dgsQueryExecutor.executeAndExtractJsonPath("query Employee {\n" +
-				"\temployees {\n" +
-				"\t  id\n" +
-				"\t  x\n" +
-				"\t}\n" +
-				"}", "data.employees");
+		StringBuilder query = new StringBuilder();
+		query.append("query Employee {");
+		query.append("  employees {");
+		query.append("      id");
+		query.append("      name");
+		//		query.append("      branchAssigns {");
+		//		query.append("          branchId");
+		//		query.append("          }");
+		//		query.append("      customFields {");
+		//		query.append("          name");
+		//		query.append("          }");
+		query.append("      }");
+		query.append("}");
+		ExecutionResult execute = dgsQueryExecutor.execute(query.toString());
+		EmployeeQDto[] employees = dgsQueryExecutor.executeAndExtractJsonPathAsObject(query.toString(), "data.employees", EmployeeQDto[].class);
 
 		System.out.println(employees.toString());
 	}

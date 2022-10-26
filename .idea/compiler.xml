@@ -13,6 +13,7 @@
         <module name="QueryService" />
         <module name="DomainModel" />
         <module name="BusinessService" />
+        <module name="QueryServiceSpring" />
       </profile>
     </annotationProcessing>
   </component>
@@ -25,6 +26,7 @@
       <module name="EmployeeDirectoryPOC" options="-parameters" />
       <module name="EntityModel" options="-parameters" />
       <module name="QueryService" options="-parameters" />
+      <module name="QueryServiceSpring" options="-parameters" />
     </option>
   </component>
 </project>

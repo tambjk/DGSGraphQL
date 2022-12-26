@@ -8,7 +8,6 @@ import lombok.experimental.SuperBuilder;
 import org.springframework.data.mongodb.core.mapping.Document;
 
 import java.time.LocalDate;
-import java.util.Map;
 
 /**
  * Created by Erman.Kaygusuzer on 23/06/2022
@@ -25,5 +24,5 @@ public class Employee extends BaseEntity {
 	private String surname;
 	private LocalDate birthDate;
 	private String identityCode;
-	private Map<String, CustomField> customFields;
+	private String parentId;
 }

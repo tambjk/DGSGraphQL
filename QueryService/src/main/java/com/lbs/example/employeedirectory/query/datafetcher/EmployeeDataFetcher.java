@@ -2,7 +2,6 @@ package com.lbs.example.employeedirectory.query.datafetcher;
 
 import com.lbs.example.employeedirectory.business.query.EmployeeQueryService;
 import com.lbs.example.employeedirectory.domain.query.branchassign.BranchAssignQDto;
-import com.lbs.example.employeedirectory.domain.query.employee.CustomFieldQDto;
 import com.lbs.example.employeedirectory.domain.query.employee.EmployeeQDto;
 import com.netflix.graphql.dgs.DgsComponent;
 import com.netflix.graphql.dgs.DgsData;
@@ -10,8 +9,6 @@ import com.netflix.graphql.dgs.DgsDataFetchingEnvironment;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import java.util.List;
-import java.util.stream.Collectors;
-import java.util.stream.Stream;
 
 /**
  * Created by Erman.Kaygusuzer on 22/06/2022
@@ -24,7 +21,7 @@ public class EmployeeDataFetcher {
 	private EmployeeQueryService employeeQueryService;
 
 	@DgsData(parentType = "Query", field = "employees")
-	public List<EmployeeQDto> employees() {
+	public List<EmployeeQDto> employees(DgsDataFetchingEnvironment dgsDataFetchingEnvironment) {
 		List<EmployeeQDto> customerList = employeeQueryService.getEmployeeList();
 		return customerList;
 	}
@@ -36,9 +33,10 @@ public class EmployeeDataFetcher {
 		return branchAssignList;
 	}
 
-	@DgsData(parentType = "Employee", field = "customFields")
-	public List<CustomFieldQDto> customFields(DgsDataFetchingEnvironment dgsDataFetchingEnvironment) {
+	@DgsData(parentType = "Employee", field = "parent")
+	public EmployeeQDto parentEmployee(DgsDataFetchingEnvironment dgsDataFetchingEnvironment) {
 		EmployeeQDto employee = dgsDataFetchingEnvironment.getSource();
-		return employee.getCustomFields().entrySet().stream().flatMap(x -> Stream.of(x.getValue())).collect(Collectors.toList());
+		EmployeeQDto parentEmployee = employeeQueryService.getEmployee(employee.getParentId());
+		return parentEmployee;
 	}
 }

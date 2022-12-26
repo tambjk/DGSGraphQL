@@ -31,7 +31,7 @@
         <module>CommandService</module>
         <module>QueryService</module>
         <module>BusinessService</module>
-        <module>QueryServiceSpring</module>
+<!--        <module>QueryServiceSpring</module>-->
     </modules>
 
     <dependencyManagement>

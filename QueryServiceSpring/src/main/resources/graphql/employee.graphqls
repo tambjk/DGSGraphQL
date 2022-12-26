@@ -11,8 +11,16 @@ type Employee {
     surname: String!
     birthDate: Date
     identityCode: String
-    parent: Employee
+    parent: ParentEmployee
     branchAssigns: [BranchAssign]
+}
+
+type ParentEmployee {
+    id: String!
+    name: String!
+    surname: String!
+    birthDate: Date
+    identityCode: String
 }
 
 type BranchAssign {

@@ -16,6 +16,7 @@ import org.springframework.stereotype.Service;
 
 import java.util.Arrays;
 import java.util.List;
+import java.util.Optional;
 
 /**
  * Created by Erman.Kaygusuzer on 23/06/2022
@@ -49,5 +50,15 @@ public class EmployeeQueryService {
 		List<BranchAssign> branchAssignList = branchAssignRepository.findAll(example);
 		BranchAssignQDto[] branchAssignQDtoList = modelMapper.map(branchAssignList, BranchAssignQDto[].class);
 		return Arrays.asList(branchAssignQDtoList);
+	}
+
+	public EmployeeQDto getEmployee(String id) {
+		Optional<Employee> optionalEmployee = employeeRepository.findById(id);
+		if(optionalEmployee.isPresent()){
+			EmployeeQDto employeeQDto = modelMapper.map(optionalEmployee.get(), EmployeeQDto.class);
+			return employeeQDto;
+		} else{
+			return null;
+		}
 	}
 }

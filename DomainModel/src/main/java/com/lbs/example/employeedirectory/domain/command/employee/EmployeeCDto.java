@@ -22,4 +22,5 @@ public class EmployeeCDto extends BaseDto {
 	private String surname;
 	private LocalDate birthDate;
 	private String identityCode;
+	private String parentId;
 }

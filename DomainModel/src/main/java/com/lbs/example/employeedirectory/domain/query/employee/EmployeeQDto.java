@@ -7,7 +7,6 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import java.time.LocalDate;
-import java.util.Map;
 
 /**
  * Created by Erman.Kaygusuzer on 24/06/2022
@@ -23,5 +22,5 @@ public class EmployeeQDto extends BaseDto {
 	private String surname;
 	private LocalDate birthDate;
 	private String identityCode;
-	private Map<String, CustomFieldQDto> customFields;
+	private String parentId;
 }
